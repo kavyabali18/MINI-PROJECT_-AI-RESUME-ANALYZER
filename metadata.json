@@ -1,0 +1,6 @@
+{
+  "name": "AI Resume Analyzer",
+  "description": "Premium AI-powered career intelligence platform for resume optimization, ATS evaluation, skill gap analysis, and career coaching.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
