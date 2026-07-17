@@ -47,17 +47,30 @@ export default function App() {
   const [recordToDelete, setRecordToDelete] = useState<string | null>(null);
 
   // Load history from localStorage on mount
-  // Load history from localStorage on mount
- useEffect(() => {
+useEffect(() => {
   const cached = localStorage.getItem("resume_analyzer_history");
 
   if (cached) {
     try {
       const parsed = JSON.parse(cached);
+
+      if (
+        Array.isArray(parsed) &&
+        parsed.length > 0 &&
+        parsed[0].id === "demo_jane_doe"
+      ) {
+        localStorage.removeItem("resume_analyzer_history");
+        setHistory([]);
+        setActiveAnalysis(null);
+        return;
+      }
+
       setHistory(parsed);
 
-      if (parsed.length > 0) {
+      if (Array.isArray(parsed) && parsed.length > 0) {
         setActiveAnalysis(parsed[0]);
+      } else {
+        setActiveAnalysis(null);
       }
     } catch (err) {
       console.error("Invalid local storage data");
