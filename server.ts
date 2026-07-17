@@ -7,7 +7,7 @@ import dotenv from "dotenv";
 dotenv.config();
 
 const app = express();
-const PORT = 3000;
+const PORT = Number(process.env.PORT) || 3000;
 
 // Set body limit higher for receiving base64 files
 app.use(express.json({ limit: "50mb" }));
@@ -173,16 +173,19 @@ Return your response strictly as a single JSON object with the following schema:
 
 Do not include any wrapping markdown blocks like \`\`\`json or trailing commentary. Return only the valid JSON parseable string.
 `;
-
-    contents.push({ text: promptMessage });
-
+contents.unshift({
+  text: promptMessage
+});
     const response = await generateWithFallback(ai, {
-      model: "gemini-3.5-flash",
-      contents: contents,
-      config: {
-        responseMimeType: "application/json",
-      }
-    });
+  model: "gemini-3.5-flash",
+  contents: contents,
+  config: {
+    responseMimeType: "application/json",
+  }
+});
+
+console.log("Gemini response received");
+console.log(response.text);
 
     const textOutput = response.text;
     if (!textOutput) {
