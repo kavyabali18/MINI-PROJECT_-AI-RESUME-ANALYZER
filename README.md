@@ -18,20 +18,10 @@ The platform uses **Google Gemini AI** to analyze uploaded resumes and provides 
 1. AI Resume Analysis
 2. ATS Compatibility Analysis
 3. Skill Gap Analysis
-- Missing Skills Detection
-- Technical Keyword Analysis
-- Professional Keyword Analysis
-- Personalized Skill Recommendations
-4.Career Roadmap Generator
-- AI-generated learning roadmap
-- Recommended certifications
-- Suggested projects
-- Career role recommendations
+4. Career Roadmap Generator
 5. AI Career Coach
 6. AI Resume Bullet Rewriter
-- Converts weak resume points into strong, achievement-oriented bullet points
-- Uses Google's XYZ Formula
-7.Executive Report
+7. Executive Report
 8. Resume History
 
 # 🛠 Tech Stack
