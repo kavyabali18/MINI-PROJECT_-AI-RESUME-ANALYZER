@@ -182,7 +182,7 @@ export default function App() {
 
   // Load history from localStorage on mount
   // Load history from localStorage on mount
-useEffect(() => {
+ useEffect(() => {
   const cached = localStorage.getItem("resume_analyzer_history");
 
   if (cached) {
@@ -192,21 +192,18 @@ useEffect(() => {
 
       if (parsed.length > 0) {
         setActiveAnalysis(parsed[0]);
-      } else {
-        setActiveAnalysis(null);
       }
     } catch (err) {
-      console.error("Failed to load history:", err);
+      console.error("Invalid local storage data");
+      localStorage.removeItem("resume_analyzer_history");
       setHistory([]);
       setActiveAnalysis(null);
     }
   } else {
-    // Start with an empty history
     setHistory([]);
     setActiveAnalysis(null);
   }
 }, []);
-
   const handleAnalyzeResume = async (payload: {
     pdfBase64: string;
     fileContent: string;
