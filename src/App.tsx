@@ -181,27 +181,31 @@ export default function App() {
   const [recordToDelete, setRecordToDelete] = useState<string | null>(null);
 
   // Load history from localStorage on mount
-  useEffect(() => {
-    const cached = localStorage.getItem("resume_analyzer_history");
-    if (cached) {
-      try {
-        const parsed = JSON.parse(cached);
-        setHistory(parsed);
-        if (parsed.length > 0) {
-          setActiveAnalysis(parsed[0]);
-        }
-      } catch (err) {
-        // Fallback to demo
-        setHistory([DEMO_ANALYSIS]);
-        setActiveAnalysis(DEMO_ANALYSIS);
+  // Load history from localStorage on mount
+useEffect(() => {
+  const cached = localStorage.getItem("resume_analyzer_history");
+
+  if (cached) {
+    try {
+      const parsed = JSON.parse(cached);
+      setHistory(parsed);
+
+      if (parsed.length > 0) {
+        setActiveAnalysis(parsed[0]);
+      } else {
+        setActiveAnalysis(null);
       }
-    } else {
-      // Seed with demo
-      setHistory([DEMO_ANALYSIS]);
-      setActiveAnalysis(DEMO_ANALYSIS);
-      localStorage.setItem("resume_analyzer_history", JSON.stringify([DEMO_ANALYSIS]));
+    } catch (err) {
+      console.error("Failed to load history:", err);
+      setHistory([]);
+      setActiveAnalysis(null);
     }
-  }, []);
+  } else {
+    // Start with an empty history
+    setHistory([]);
+    setActiveAnalysis(null);
+  }
+}, []);
 
   const handleAnalyzeResume = async (payload: {
     pdfBase64: string;
@@ -228,7 +232,7 @@ export default function App() {
       const result: ResumeAnalysisResult = await response.json();
       
       // Update states
-      const updatedHistory = [result, ...history.filter(h => h.id !== "demo_jane_doe")];
+      const updatedHistory = [result, ...history];
       setHistory(updatedHistory);
       setActiveAnalysis(result);
       localStorage.setItem("resume_analyzer_history", JSON.stringify(updatedHistory));
