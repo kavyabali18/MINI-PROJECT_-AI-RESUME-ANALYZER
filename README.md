@@ -1,113 +1,147 @@
-# AI Resume Analyzer
+# 🚀 ResumeIntellect – AI Powered Resume Analyzer
 
-## Overview
+> **ResumeIntellect* is an AI-powered Resume Analysis Platform that helps job seekers optimize their resumes using Google's Gemini AI. It evaluates resumes for ATS compatibility, analyzes skill gaps, calculates job match scores, provides personalized career recommendations, and generates professional optimization reports through a modern SaaS dashboard.
 
-AI Resume Analyzer is a full-stack web application that leverages Google Gemini AI to evaluate resumes, provide ATS compatibility analysis, identify skill gaps, and deliver personalized career recommendations. The platform helps users optimize their resumes for specific job roles through intelligent feedback and data-driven insights.
+## 🌐 Live Demo
 
-## Features
+🔗 **https://mini-project-ai-resume-analyzer.onrender.com**
 
-* AI-powered resume analysis
-* ATS score evaluation
-* Resume quality scoring
-* Job-role matching and compatibility analysis
-* Skill gap identification
-* Missing keyword detection
-* AI-generated executive summary
-* ATS optimization recommendations
-* Personalized career guidance
-* Learning roadmap suggestions
-* Resume bullet point enhancement
-* Interactive analytics dashboard
-* PDF resume upload support
+## 📖 Project Overview
 
-## Tech Stack
+ResumeIntellect is designed to assist students and professionals in creating ATS-friendly resumes that improve their chances of getting shortlisted by recruiters.
 
-### Frontend
+The platform uses **Google Gemini AI** to analyze uploaded resumes and provides detailed insights, including resume quality, ATS compatibility, missing skills, learning roadmaps, AI-powered resume rewriting, and career coaching.
 
-* React 19
-* TypeScript
-* Vite
-* Tailwind CSS
-* Recharts
-* Lucide React
 
-### Backend
+# ✨ Features
 
-* Node.js
-* Express.js
+1. AI Resume Analysis
+2. ATS Compatibility Analysis
+3. Skill Gap Analysis
+- Missing Skills Detection
+- Technical Keyword Analysis
+- Professional Keyword Analysis
+- Personalized Skill Recommendations
+4.Career Roadmap Generator
+- AI-generated learning roadmap
+- Recommended certifications
+- Suggested projects
+- Career role recommendations
+5. AI Career Coach
+6. AI Resume Bullet Rewriter
+- Converts weak resume points into strong, achievement-oriented bullet points
+- Uses Google's XYZ Formula
+7.Executive Report
+8. Resume History
 
-### AI Integration
+# 🛠 Tech Stack
 
-* Google Gemini API
+## Frontend
 
-## Project Structure
+- React
+- TypeScript
+- Vite
+- Tailwind CSS
+- Lucide React
 
-```text
-src/
-├── Components
-├── Pages
-├── Services
-├── Utilities
+## Backend
 
-server.ts
-vite.config.ts
-package.json
+- Node.js
+- Express.js
+
+## Artificial Intelligence
+
+- Google Gemini 3.5 Flash API
+
+## Data Storage
+
+- Browser Local Storage
+
+## Deployment
+
+- Render
+
+---
+
+# 🏗 Project Architecture
+
 ```
+                User Uploads Resume
+                        │
+                        ▼
+               React Frontend (Vite)
+                        │
+                        ▼
+              Express.js Backend API
+                        │
+                        ▼
+              Google Gemini AI API
+                        │
+                        ▼
+           AI Resume Analysis Result
+                        │
+                        ▼
+          Interactive Dashboard & Reports
+``'
+# ⚙️ Installation
 
-## Installation
-
-1. Clone the repository
+## Clone Repository
 
 ```bash
-git clone <repository-url>
-cd ai-resume-analyzer
+git clone https://github.com/yourusername/ResumeIntellect.git
 ```
-
-2. Install dependencies
-
+## Navigate to Project
+```bash
+cd ResumeIntellect
+```
+## Install Dependencies
 ```bash
 npm install
 ```
+# 🔑 Environment Variables
 
-3. Configure environment variables
-
-Create a `.env` file:
+Create a `.env` file in the root directory.
 
 ```env
-GEMINI_API_KEY=YOUR_GEMINI_API_KEY
-APP_URL=http://localhost:3000
+GEMINI_API_KEY=YOUR_API_KEY
 ```
 
-4. Run the application
+# ▶️ Run the Project
 
 ```bash
 npm run dev
 ```
-
-5. Open in browser
-
-```text
+Open:
+```
 http://localhost:3000
 ```
+# 📌 How to Use
 
-## How It Works
+1. Upload your Resume (PDF)
+2. Select Target Job Role
+3. Click Analyze Resume
+4. View:
+   - Resume Score
+   - ATS Score
+   - Job Match
+   - Skill Gap
+   - Learning Roadmap
+5. Chat with the AI Career Coach
+6. Rewrite Resume Bullet Points
+7. Download the Executive Report
 
-1. Upload a resume in PDF format.
-2. Select target job role and career preferences.
-3. AI analyzes resume content using Gemini.
-4. ATS compatibility and job-match scores are generated.
-5. Skill gaps and missing keywords are identified.
-6. Personalized recommendations and career insights are provided.
+# 🚀 Future Enhancements
 
-## Future Enhancements
+- User Authentication
+- Cloud Database Integration
+- Resume Version Comparison
+- Multi-language Resume Analysis
+- Recruiter Dashboard
+- Resume Templates
+- Cover Letter Generator
 
-* Resume comparison module
-* Industry-specific analysis
-* Interview preparation assistant
-* Resume version tracking
-* Job recommendation engine
-* Multi-language support
+# 👨‍💻 Author
 
-## License
+**Kavya Shree Bali**
 
-This project is intended for educational and portfolio purposes.
+B.Tech – Artificial Intelligence & Machine Learning
